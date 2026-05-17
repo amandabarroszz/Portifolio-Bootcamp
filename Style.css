@@ -1,0 +1,27 @@
+body{
+    background-color: #f4f4f4;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+h1{
+    color: #6a0dad;
+}
+
+.descricao{
+    font-size: 18px;
+}
+
+ul{
+    line-height: 2;
+}
