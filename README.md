@@ -1,8 +1,7 @@
-# 👩‍💻 Amanda Barros dos Santos — portfolioHUB
-
+# Amanda Barros — Portfólio Bootcamp
 Estudante de Ciência da Computação | Dados & Automação | Qualificar TI
 
-🌐 **Site:** [amandabarroszz.github.io/Portifolio-Bootcamp](https://amandabarroszz.github.io/Portifolio-Bootcamp/)
+**Site:** [amandabarroszz.github.io/Portifolio-Bootcamp](https://amandabarroszz.github.io/Portifolio-Bootcamp/)
 
 ---
 
@@ -14,10 +13,10 @@ Apaixonada por dados e tecnologia. Trabalho no Departamento Pessoal da Qualifica
 
 | Projeto | Status | Tecnologias |
 |---|---|---|
-| Automação de Ponto Eletrônico | ✅ Concluído | Power Automate, Teams |
-| Automação de Admissão | 🔄 Em desenvolvimento | Power Automate, Lists |
-| Dashboard de Colaboradores | 🔄 Em desenvolvimento | Power BI, Lists |
-| Impacto dos Agrotóxicos | ✅ Concluído | Pesquisa Acadêmica |
+| Automação de Ponto Eletrônico | ✓ Concluído | Power Automate, Teams |
+| Automação de Admissão | ↻ Em desenvolvimento | Power Automate, Lists |
+| Dashboard de Colaboradores | ↻ Em desenvolvimento | Power BI, Lists |
+| Impacto dos Agrotóxicos | ✓ Concluído | Pesquisa Acadêmica |
 
 ## Tecnologias
 
