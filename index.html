@@ -2,8 +2,8 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Amanda Barros | Portfólio</title>
 
@@ -12,20 +12,27 @@
   <style>
 
     :root{
-      --bg:#0b0a0a;
+      --bg:#0a0808;
+      --bg2:#100d0d;
       --card:#141111;
-      --gold:#c9a84c;
-      --wine:#7b2d42;
-      --text:#d9cec2;
-      --muted:#8a7d75;
-      --white:#f5ede6;
       --border:#2a1f1f;
+      --gold:#c9a84c;
+      --gold-light:#e7cb80;
+      --wine:#7b2d42;
+      --wine-light:#a14563;
+      --text:#d8c9bd;
+      --muted:#8d7b72;
+      --white:#f5ede6;
     }
 
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -39,32 +46,33 @@
       position:fixed;
       top:0;
       width:100%;
-      padding:1.2rem 4rem;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:rgba(11,10,10,0.95);
+      padding:1.3rem 5rem;
+      background:rgba(10,8,8,0.93);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid var(--border);
-      z-index:100;
+      z-index:1000;
     }
 
     .logo{
       font-family:'Cormorant Garamond', serif;
-      color:var(--gold);
       font-size:1.2rem;
-      letter-spacing:0.1em;
+      color:var(--gold);
+      letter-spacing:0.08em;
     }
 
     nav ul{
       display:flex;
-      gap:2rem;
       list-style:none;
+      gap:2rem;
     }
 
     nav a{
-      color:var(--muted);
       text-decoration:none;
-      font-size:0.8rem;
+      color:var(--muted);
+      font-size:0.75rem;
       text-transform:uppercase;
       letter-spacing:0.15em;
       transition:0.3s;
@@ -75,7 +83,9 @@
     }
 
     section{
-      padding:7rem 4rem;
+      padding:6rem 5rem;
+      position:relative;
+      z-index:1;
     }
 
     .hero{
@@ -85,22 +95,23 @@
     }
 
     .hero-content{
-      max-width:700px;
+      max-width:760px;
+      animation:fadeUp 0.8s ease;
     }
 
     .hero-eyebrow{
       color:var(--gold);
       text-transform:uppercase;
       letter-spacing:0.25em;
-      font-size:0.7rem;
+      font-size:0.72rem;
       margin-bottom:1.5rem;
     }
 
     h1{
       font-family:'Cormorant Garamond', serif;
-      font-size:5rem;
+      font-size:clamp(4rem,7vw,6rem);
+      line-height:0.95;
       color:var(--white);
-      line-height:1;
       margin-bottom:1rem;
     }
 
@@ -110,18 +121,25 @@
     }
 
     .hero-role{
-      color:var(--wine);
+      color:var(--wine-light);
       text-transform:uppercase;
       letter-spacing:0.18em;
       font-size:0.8rem;
       margin-bottom:2rem;
     }
 
-    .hero-text{
-      color:var(--muted);
-      line-height:1.9;
-      max-width:550px;
+    .hero-divider{
+      width:50px;
+      height:1px;
+      background:var(--gold);
       margin-bottom:2rem;
+    }
+
+    .hero-text{
+      max-width:560px;
+      line-height:1.9;
+      color:var(--muted);
+      margin-bottom:2.5rem;
     }
 
     .btns{
@@ -131,8 +149,8 @@
     }
 
     .btn{
-      padding:0.9rem 2rem;
       text-decoration:none;
+      padding:0.9rem 2rem;
       font-size:0.75rem;
       text-transform:uppercase;
       letter-spacing:0.15em;
@@ -141,53 +159,62 @@
 
     .btn-primary{
       background:var(--gold);
-      color:black;
+      color:#000;
     }
 
     .btn-primary:hover{
-      opacity:0.85;
+      background:var(--gold-light);
+      box-shadow:0 5px 25px rgba(201,168,76,0.35);
     }
 
     .btn-secondary{
-      border:1px solid var(--gold);
+      border:1px solid rgba(201,168,76,0.4);
       color:var(--gold);
     }
 
     .btn-secondary:hover{
-      background:rgba(201,168,76,0.08);
-    }
-
-    .section-title{
-      font-family:'Cormorant Garamond', serif;
-      font-size:2.5rem;
-      color:var(--white);
-      margin-bottom:1rem;
+      background:rgba(201,168,76,0.06);
+      border-color:var(--gold);
     }
 
     .section-sub{
       color:var(--gold);
       text-transform:uppercase;
       letter-spacing:0.2em;
-      font-size:0.7rem;
+      font-size:0.68rem;
       margin-bottom:1rem;
     }
 
+    .section-title{
+      font-family:'Cormorant Garamond', serif;
+      color:var(--white);
+      font-size:2.7rem;
+      margin-bottom:1rem;
+    }
+
+    .section-line{
+      width:45px;
+      height:1px;
+      background:var(--wine);
+      margin-bottom:3rem;
+    }
+
     .about{
-      background:#100d0d;
+      background:var(--bg2);
       border-top:1px solid var(--border);
       border-bottom:1px solid var(--border);
     }
 
     .about p{
-      max-width:800px;
-      line-height:2;
+      max-width:850px;
       color:var(--muted);
-      margin-bottom:1rem;
+      line-height:2;
+      margin-bottom:1.2rem;
     }
 
     .skills-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
       gap:1.5rem;
       margin-top:2rem;
     }
@@ -196,6 +223,32 @@
       background:var(--card);
       border:1px solid var(--border);
       padding:2rem;
+      transition:all 0.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .skill-card::before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:linear-gradient(to bottom, var(--wine), var(--gold));
+      transform:scaleY(0);
+      transform-origin:top;
+      transition:transform 0.35s ease;
+    }
+
+    .skill-card:hover::before{
+      transform:scaleY(1);
+    }
+
+    .skill-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(201,168,76,0.35);
+      box-shadow:0 10px 35px rgba(0,0,0,0.35);
     }
 
     .skill-card h3{
@@ -207,11 +260,11 @@
     .skill-card p{
       color:var(--muted);
       line-height:1.8;
-      font-size:0.9rem;
+      font-size:0.92rem;
     }
 
     .projects{
-      background:#100d0d;
+      background:var(--bg2);
       border-top:1px solid var(--border);
       border-bottom:1px solid var(--border);
     }
@@ -227,18 +280,38 @@
       background:var(--card);
       border:1px solid var(--border);
       padding:2rem;
-      transition:0.3s;
+      transition:all 0.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-card::before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:0;
+      bottom:0;
+      width:2px;
+      background:linear-gradient(to bottom, var(--gold), var(--wine));
+      transform:scaleY(0);
+      transform-origin:top;
+      transition:transform 0.35s ease;
+    }
+
+    .project-card:hover::before{
+      transform:scaleY(1);
     }
 
     .project-card:hover{
-      border-color:var(--gold);
-      transform:translateY(-4px);
+      border-color:rgba(201,168,76,0.35);
+      transform:translateY(-6px);
+      box-shadow:0 10px 35px rgba(0,0,0,0.35);
     }
 
     .project-card h3{
       color:var(--white);
-      margin-bottom:1rem;
       font-size:1.3rem;
+      margin-bottom:1rem;
     }
 
     .project-card p{
@@ -247,15 +320,35 @@
       font-size:0.9rem;
     }
 
-    footer{
-      padding:2rem;
-      text-align:center;
+    .contact-text{
+      max-width:700px;
       color:var(--muted);
-      font-size:0.8rem;
-      border-top:1px solid var(--border);
+      line-height:2;
+      margin-bottom:2rem;
     }
 
-    @media(max-width:768px){
+    footer{
+      border-top:1px solid var(--border);
+      text-align:center;
+      padding:2rem;
+      color:var(--muted);
+      font-size:0.8rem;
+      letter-spacing:0.08em;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @media(max-width:900px){
 
       nav{
         padding:1rem 1.5rem;
@@ -270,12 +363,13 @@
       }
 
       h1{
-        font-size:3.5rem;
+        font-size:3.7rem;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
@@ -312,11 +406,14 @@
         Ciência da Computação · Dados & Tecnologia
       </div>
 
+      <div class="hero-divider"></div>
+
       <p class="hero-text">
-        Estudante de Ciência da Computação apaixonada por tecnologia, dados e automação de processos. Construindo experiência prática em TI através de projetos acadêmicos e soluções voltadas à eficiência operacional.
+        Estudante de Ciência da Computação apaixonada por tecnologia, dados e automação de processos. Construindo experiência prática em TI através de soluções inteligentes, organização de dados e desenvolvimento de projetos.
       </p>
 
       <div class="btns">
+
         <a href="#projetos" class="btn btn-primary">
           Ver Projetos
         </a>
@@ -324,6 +421,7 @@
         <a href="#contato" class="btn btn-secondary">
           Contato
         </a>
+
       </div>
 
     </div>
@@ -340,16 +438,18 @@
       Quem sou eu
     </h2>
 
+    <div class="section-line"></div>
+
     <p>
       Olá! Meu nome é Amanda Barros dos Santos e atualmente curso Ciência da Computação.
     </p>
 
     <p>
-      Trabalho na área de Departamento Pessoal da Qualificar TI, desenvolvendo automações com Power Automate, organização de dados com Microsoft Lists e dashboards no Power BI.
+      Atuo na área de Departamento Pessoal da Qualificar TI, trabalhando com automações utilizando Power Automate, organização de processos internos e estruturação de dados com Microsoft Lists e Power BI.
     </p>
 
     <p>
-      Meu objetivo é construir uma carreira sólida na área de Ciência de Dados, unindo tecnologia, análise e automação para criar soluções inteligentes.
+      Meu objetivo é construir uma carreira sólida na área de Ciência de Dados, unindo tecnologia, automação e análise estratégica para desenvolver soluções inteligentes.
     </p>
 
   </section>
@@ -364,26 +464,28 @@
       Habilidades
     </h2>
 
+    <div class="section-line"></div>
+
     <div class="skills-grid">
 
       <div class="skill-card">
         <h3>Power BI</h3>
-        <p>Criação de dashboards e visualização de dados.</p>
+        <p>Criação de dashboards e visualização estratégica de dados.</p>
       </div>
 
       <div class="skill-card">
         <h3>Power Automate</h3>
-        <p>Automação de processos internos e fluxos empresariais.</p>
+        <p>Automação de fluxos empresariais e otimização de processos.</p>
       </div>
 
       <div class="skill-card">
         <h3>HTML & CSS</h3>
-        <p>Desenvolvimento de interfaces web modernas e responsivas.</p>
+        <p>Construção de interfaces modernas, elegantes e responsivas.</p>
       </div>
 
       <div class="skill-card">
         <h3>Git & GitHub</h3>
-        <p>Versionamento, organização de projetos e publicação.</p>
+        <p>Versionamento, documentação e gerenciamento de projetos.</p>
       </div>
 
     </div>
@@ -400,30 +502,44 @@
       O que construí
     </h2>
 
+    <div class="section-line"></div>
+
     <div class="project-grid">
 
       <div class="project-card">
-        <h3>Automação de Ponto</h3>
+
+        <h3>
+          Automação de Ponto
+        </h3>
 
         <p>
-          Fluxo automatizado para análise de inconsistências no ponto eletrônico utilizando Power Automate e Microsoft Teams.
+          Fluxo automatizado para análise de inconsistências em ponto eletrônico utilizando Power Automate e Microsoft Teams.
         </p>
+
       </div>
 
       <div class="project-card">
-        <h3>Dashboard de Colaboradores</h3>
+
+        <h3>
+          Dashboard de Colaboradores
+        </h3>
 
         <p>
-          Estruturação de dados e criação de dashboards com Power BI para análise de indicadores internos.
+          Estruturação de dados internos e criação de dashboards analíticos utilizando Power BI.
         </p>
+
       </div>
 
       <div class="project-card">
-        <h3>Portfólio Profissional</h3>
+
+        <h3>
+          Portfólio Profissional
+        </h3>
 
         <p>
           Desenvolvimento de portfólio digital utilizando HTML, CSS, GitHub e GitHub Pages.
         </p>
+
       </div>
 
     </div>
@@ -440,7 +556,9 @@
       Vamos conversar?
     </h2>
 
-    <p class="hero-text">
+    <div class="section-line"></div>
+
+    <p class="contact-text">
       Estou aberta a oportunidades, conexões e projetos voltados para tecnologia, dados e desenvolvimento.
     </p>
 
@@ -463,4 +581,5 @@
   </footer>
 
 </body>
+
 </html>
