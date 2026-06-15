@@ -1,7 +1,7 @@
 # Amanda Barros — Portfólio Bootcamp
 Estudante de Ciência da Computação | Dados & Automação | Qualificar TI
 
-**Site:** [amandabarroszz.github.io/Portifolio-Bootcamp](https://amandabarroszz.github.io/Portifolio-Bootcamp/)
+**Site:** [amandabarroszz.github.io/Portifolio-Bootcamp](https://[amandabarroszz.github.io/Portifolio-Bootcamp/](https://portifolioamandabarrosd.netlify.app/))
 
 ---
 
